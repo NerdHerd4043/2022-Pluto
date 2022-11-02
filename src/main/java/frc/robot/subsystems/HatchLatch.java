@@ -9,6 +9,9 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.HatchLatchConstants;
 
+/**
+ * Iain hasn't been here yet
+ */
 public class HatchLatch extends SubsystemBase {
   Solenoid latch = new Solenoid(PneumaticsModuleType.CTREPCM, HatchLatchConstants.latchID);
   Solenoid extend = new Solenoid(PneumaticsModuleType.CTREPCM, HatchLatchConstants.extendID);
