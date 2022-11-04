@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import frc.robot.Constants.DriveConstants;
+import frc.robot.Constants.RobotConstants;
 
 public class Drivetrain extends SubsystemBase {
   WPI_TalonSRX backLeftMotor = new WPI_TalonSRX(DriveConstants.backLeftMotorID);
@@ -19,7 +20,7 @@ public class Drivetrain extends SubsystemBase {
   WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(DriveConstants.frontLeftMotorID);
   WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(DriveConstants.frontRightMotorID);
 
-  Solenoid shifter = new Solenoid(PneumaticsModuleType.CTREPCM, DriveConstants.shifterID);
+  Solenoid shifter = new Solenoid(RobotConstants.PCMID, PneumaticsModuleType.CTREPCM, DriveConstants.shifterID);
 
   DifferentialDrive diffDrive;
 
@@ -46,6 +47,10 @@ public class Drivetrain extends SubsystemBase {
 
   public void shift(boolean a) {
     shifter.set(a);
+  }
+
+  public void shiftUp() {
+    shift(true);
   }
 
   @Override

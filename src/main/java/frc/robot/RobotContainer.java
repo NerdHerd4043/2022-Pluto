@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.commands.hatchlatch.Clap;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.HatchLatch;
@@ -62,6 +63,9 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(driveStick, Button.kX.value).whenPressed(new InstantCommand(hatchLatch::toggleLatch, hatchLatch));
     new JoystickButton(driveStick, Button.kY.value).whenPressed(new InstantCommand(hatchLatch::toggleExtend, hatchLatch));
+    new JoystickButton(driveStick, Button.kA.value).toggleWhenPressed(new RunCommand(() -> cargoIntake.in(), cargoIntake));
+    new JoystickButton(driveStick, Button.kB.value).toggleWhenPressed(new RunCommand(() -> cargoIntake.out(), cargoIntake));
+    new JoystickButton(driveStick, Button.kBack.value).toggleWhenPressed(new Clap(hatchLatch));
   }
 
   /**

@@ -8,13 +8,14 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.HatchLatchConstants;
+import frc.robot.Constants.RobotConstants;
 
 /**
- * Iain hasn't been here yet
+ * Iain hasn definitely been here
  */
 public class HatchLatch extends SubsystemBase {
-  Solenoid latch = new Solenoid(PneumaticsModuleType.CTREPCM, HatchLatchConstants.latchID);
-  Solenoid extend = new Solenoid(PneumaticsModuleType.CTREPCM, HatchLatchConstants.extendID);
+  Solenoid latch = new Solenoid(RobotConstants.PCMID, PneumaticsModuleType.CTREPCM, HatchLatchConstants.latchID);
+  Solenoid extend = new Solenoid(RobotConstants.PCMID, PneumaticsModuleType.CTREPCM, HatchLatchConstants.extendID);
 
   /** Creates a new HatchLatch. */
   public HatchLatch() {}
