@@ -31,6 +31,8 @@ public class Drivetrain extends SubsystemBase {
     frontLeftMotor.setSafetyEnabled(false);
     frontRightMotor.setSafetyEnabled(false);
 
+    frontLeftMotor.setInverted(true);
+
     backLeftMotor.follow(frontLeftMotor);
     backRightMotor.follow(frontRightMotor);
 
