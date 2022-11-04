@@ -23,6 +23,9 @@ public final class Constants {
         public static final int frontLeftMotorID = 11;
         public static final int frontRightMotorID = 13;
 
+        public static final boolean currentLimitEnabled = true;
+        public static final int currentLimit = 40;
+
         public static final int shifterID = 4;
 
         public static final boolean lowGear = false;

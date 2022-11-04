@@ -31,6 +31,16 @@ public class Drivetrain extends SubsystemBase {
     frontLeftMotor.setSafetyEnabled(false);
     frontRightMotor.setSafetyEnabled(false);
 
+    backLeftMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
+    backRightMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
+    frontLeftMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
+    frontRightMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
+    
+    backLeftMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
+    backRightMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
+    frontLeftMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
+    frontRightMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
+
     frontLeftMotor.setInverted(true);
 
     backLeftMotor.follow(frontLeftMotor);
