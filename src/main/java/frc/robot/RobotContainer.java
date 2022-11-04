@@ -65,6 +65,8 @@ public class RobotContainer {
     new JoystickButton(driveStick, Button.kY.value).whenPressed(new InstantCommand(hatchLatch::toggleExtend, hatchLatch));
     new JoystickButton(driveStick, Button.kA.value).toggleWhenPressed(new RunCommand(() -> cargoIntake.in(), cargoIntake));
     new JoystickButton(driveStick, Button.kB.value).toggleWhenPressed(new RunCommand(() -> cargoIntake.out(), cargoIntake));
+    new JoystickButton(driveStick, Button.kLeftBumper.value).whenPressed(new InstantCommand(drivetrain::shiftUp, drivetrain));
+    new JoystickButton(driveStick, Button.kRightBumper.value).whenPressed(new InstantCommand(drivetrain::shiftDown, drivetrain));
     new JoystickButton(driveStick, Button.kBack.value).toggleWhenPressed(new Clap(hatchLatch));
   }
 
