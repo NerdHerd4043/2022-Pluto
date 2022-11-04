@@ -38,7 +38,7 @@ public class RobotContainer {
       new RunCommand(
         () -> drivetrain.drive(
           driveStick.getLeftY(), 
-          driveStick.getRightX()
+          -driveStick.getRightX()
         ),
         drivetrain
       )
