@@ -46,10 +46,10 @@ public class RobotContainer {
     cargoIntake.setDefaultCommand(
       new RunCommand(
         () -> cargoIntake.set(
-          driveStick.getLeftTriggerAxis(), 
-          driveStick.getRightTriggerAxis()
+          driveStick.getRightTriggerAxis(), 
+          driveStick.getLeftTriggerAxis()
         ), 
-        drivetrain)
+        cargoIntake)
     );
   }
 

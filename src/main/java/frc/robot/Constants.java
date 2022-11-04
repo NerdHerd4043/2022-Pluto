@@ -14,20 +14,20 @@ package frc.robot;
  */
 public final class Constants {
     public static final class DriveConstants {
-        public static final int backLeftMotorID = 0;
-        public static final int backRightMotorID = 1;
-        public static final int frontLeftMotorID = 2;
-        public static final int frontRightMotorID = 3;
+        public static final int backLeftMotorID = 15;
+        public static final int backRightMotorID = 12;
+        public static final int frontLeftMotorID = 12;
+        public static final int frontRightMotorID = 13;
 
-        public static final int shifterID = 0;
+        public static final int shifterID = 4;
     }
 
     public static final class HatchLatchConstants {
-        public static final int latchID = 1;
-        public static final int extendID = 2;
+        public static final int latchID = 5;
+        public static final int extendID = 6;
     }
 
     public static final class CargoIntakeConstants {
-        public static final int conveyorMotorID = 4;
+        public static final int conveyorMotorID = 2;
     }
 }
