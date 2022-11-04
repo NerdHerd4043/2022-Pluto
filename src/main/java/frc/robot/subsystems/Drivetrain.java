@@ -50,7 +50,11 @@ public class Drivetrain extends SubsystemBase {
   }
 
   public void shiftUp() {
-    shift(true);
+    shift(!DriveConstants.lowGear);
+  }
+
+  public void shiftDown() {
+    shift(DriveConstants.lowGear);
   }
 
   @Override
