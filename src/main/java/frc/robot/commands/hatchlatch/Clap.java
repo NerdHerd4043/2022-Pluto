@@ -32,7 +32,7 @@ public class Clap extends CommandBase {
   public void execute() {
     double currentTime = Timer.getFPGATimestamp();
 
-    if (currentTime >= lastSwitch + 0.5) {
+    if (currentTime >= lastSwitch + 0.2) {
       lastSwitch = currentTime;
 
       hatchLatch.toggleLatch();
