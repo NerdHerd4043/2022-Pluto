@@ -20,26 +20,15 @@ public class Drivetrain extends SubsystemBase {
   WPI_TalonSRX frontLeftMotor = new WPI_TalonSRX(DriveConstants.frontLeftMotorID);
   WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(DriveConstants.frontRightMotorID);
 
+  WPI_TalonSRX[] driveMotors = {backLeftMotor,backRightMotor,frontLeftMotor,frontRightMotor};
+
   Solenoid shifter = new Solenoid(RobotConstants.PCMID, PneumaticsModuleType.CTREPCM, DriveConstants.shifterID);
 
   DifferentialDrive diffDrive;
 
   /** Creates a new Drivetrain. */
   public Drivetrain() {
-    backLeftMotor.setSafetyEnabled(false);
-    backRightMotor.setSafetyEnabled(false);
-    frontLeftMotor.setSafetyEnabled(false);
-    frontRightMotor.setSafetyEnabled(false);
-
-    backLeftMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
-    backRightMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
-    frontLeftMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
-    frontRightMotor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
-    
-    backLeftMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
-    backRightMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
-    frontLeftMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
-    frontRightMotor.configContinuousCurrentLimit(DriveConstants.currentLimit);
+    driveConfig(driveMotors);
 
     frontLeftMotor.setInverted(true);
     backLeftMotor.setInverted(true);
@@ -68,6 +57,14 @@ public class Drivetrain extends SubsystemBase {
 
   public void shiftDown() {
     shift(DriveConstants.lowGear);
+  }
+
+  private void driveConfig(WPI_TalonSRX[] motors) {
+    for(int i = 0; i < motors.length; i++) {
+      motors[i].setSafetyEnabled(false);
+      motors[i].enableCurrentLimit(DriveConstants.currentLimitEnabled);
+      motors[i].configContinuousCurrentLimit(DriveConstants.currentLimit);
+    }
   }
 
   @Override
