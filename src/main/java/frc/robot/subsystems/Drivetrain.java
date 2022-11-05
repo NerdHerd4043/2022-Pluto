@@ -60,10 +60,10 @@ public class Drivetrain extends SubsystemBase {
   }
 
   private void driveConfig(WPI_TalonSRX[] motors) {
-    for(int i = 0; i < motors.length; i++) {
-      motors[i].setSafetyEnabled(false);
-      motors[i].enableCurrentLimit(DriveConstants.currentLimitEnabled);
-      motors[i].configContinuousCurrentLimit(DriveConstants.currentLimit);
+    for(WPI_TalonSRX motor : motors) {
+      motor.setSafetyEnabled(false);
+      motor.enableCurrentLimit(DriveConstants.currentLimitEnabled);
+      motor.configContinuousCurrentLimit(DriveConstants.currentLimit);
     }
   }
 
