@@ -6,6 +6,7 @@ package frc.robot.commands.hatchlatch;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants.HatchLatchConstants;
 import frc.robot.subsystems.HatchLatch;
 
 public class Clap extends CommandBase {
@@ -32,7 +33,7 @@ public class Clap extends CommandBase {
   public void execute() {
     double currentTime = Timer.getFPGATimestamp();
 
-    if (currentTime >= lastSwitch + 0.2) {
+    if (currentTime >= lastSwitch + HatchLatchConstants.clapTime) {
       lastSwitch = currentTime;
 
       hatchLatch.toggleLatch();

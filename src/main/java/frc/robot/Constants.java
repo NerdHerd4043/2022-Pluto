@@ -34,6 +34,8 @@ public final class Constants {
     public static final class HatchLatchConstants {
         public static final int latchID = 5;
         public static final int extendID = 6;
+
+        public static final double clapTime = 0.2;
     }
 
     public static final class CargoIntakeConstants {
