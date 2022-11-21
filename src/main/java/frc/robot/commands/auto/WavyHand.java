@@ -33,7 +33,7 @@ public class WavyHand extends CommandBase {
 
     System.out.println(fwd + " " + rot);
 
-    drivetrain.drive(fwd, rot);
+    drivetrain.drive(-fwd, rot, false);
   }
 
   // Called once the command ends or is interrupted.
