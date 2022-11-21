@@ -28,8 +28,10 @@ public class WavyHand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Double fwd = SmartDashboard.getNumber("fwd_scalar", 0);
-    Double rot = SmartDashboard.getNumber("rot_scalar", 0);
+    Double fwd = SmartDashboard.getNumber("drive_scalar", 0);
+    Double rot = SmartDashboard.getNumber("turn_scalar", 0);
+
+    System.out.println(fwd + " " + rot);
 
     drivetrain.drive(fwd, rot);
   }
